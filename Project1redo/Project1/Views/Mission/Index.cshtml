@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Missions";
+}
+<link href="~/Content/Style.css" rel="stylesheet" />
+
+<div class="container">
+
+        <div class="row ">
+            <div class="col-md-12 text-center">
+
+                <h2>Worldwide missions</h2>
+
+                <div class="text-center">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Choose a mission <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Missions", "Mission", new { mission = "Angola"})">Angola Luanda<br /> Mission</a></li>
+                            <li><a href="@Url.Action("Missions", "Mission", new { mission = "Colorado"})">Colorado Colorado Springs<br /> Mission</a></li>
+                            <li><a href="@Url.Action("Missions", "Mission", new { mission = "Portugal"})">Portugal Lisbon<br /> Mission</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="@Url.Action("Missions", "Mission", new { mission = "Other"})">Ask about your mission</a></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                <br />
+                <br />
+                
+                <img class="globe" src="~/Content/Images/globe.jpg" />
+            </div>
+
+            <div class="row space">
+
+            </div>
+        </div>
+</div>

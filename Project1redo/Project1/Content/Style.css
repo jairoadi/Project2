@@ -1,0 +1,136 @@
+﻿body {
+    background-color: #262626;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.jumbotron {
+    color: #ffffff;
+    background-size: cover;
+    background-image: url('Images/benchsisters.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 400px;
+}
+cite{
+    font-style:italic;
+}
+blockquote {
+    position: relative;
+    top: 55%;
+    transform: translateY(-50%);
+}
+h1 {
+    font-family: Verdana, Geneva, sans-serif;
+    position: relative;
+    top: 20%;
+    transform: translateY(-50%);
+}
+ .navbar {
+    text-align: center;
+    font-size: 20px;
+  }
+ .navbar-nav {
+     float:none;
+     display:inline-block;
+ }
+
+.textcontent{
+    font-family:Arial, Helvetica, sans-serif !important;
+}
+
+#hrmiddle{
+    width: 70%;
+}
+iframe{
+    width:100%;
+}
+
+@media screen and (min-width: 992px) {
+    iframe {
+        min-width:560px;
+        min-height:315px;
+    }
+}
+
+
+
+.breadcrumb {
+    background:#222222;
+    text-align:center;
+    border: 0px solid #f5f5f5;
+    border-radius: 14px; 
+    display: block;
+   
+}
+.breadcrumb li {font-size: 14px;}
+.breadcrumb a {
+    
+    color:#ffffff;
+}
+.breadcrumb a:hover {
+    color:#b3b3b3;
+}
+.breadcrumb>.active {
+    color:#999999;
+}
+.breadcrumb>li+li:before {
+    color: #ffffff;
+    content: "\276F\00a0";}
+
+.colofimag{
+    height: 500px;
+    width:500px;
+}
+.imagemap{
+    height:400px;
+    width:500px;
+}
+.globe{
+    height: 300px;
+    width:auto;
+}
+.aboutimg{
+    height: 400px;
+    width:auto;
+    border-radius:10px;
+}
+.space{
+    height:108px;
+}
+.map{
+    height:200px;
+    width:100%;
+    background:#ffffff;
+}
+.flag{
+    height:200px;
+    width:200px;
+}
+
+.panel-group .panel{
+    background:#333333;
+    color: white;
+}
+.panel-heading{
+    background:#222222!important;
+    color: white!important;
+}
+#accordion{
+     background:#222222;
+}
+.space2{
+    height: 30px;
+}
+
+.space{
+    height: 115px;
+}
+
+.space3{
+    height:78px;
+}

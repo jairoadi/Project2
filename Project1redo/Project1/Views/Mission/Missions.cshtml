@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewBag.Title = "Missions";
+}
+<link href="~/Content/Style.css" rel="stylesheet" />
+<h2>@ViewBag.Mission mission FAQ's</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="@Url.Action("Index", "Home")">Home</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index", "Mission")">Missions</a>
+                </li>
+                <li class="active">@ViewBag.Mission</li>
+            </ol>
+
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <div class=" col-md-offset-2 col-md-4 formap">
+            <img class="map" src="@ViewBag.Map" />
+        </div>
+        <div class="col-md-4">
+            <img class="flag" src="@ViewBag.Flag" />
+        </div>
+    </div>
+
+    <div class="row">
+        <br />
+            <p>
+                <strong><u>President</u>:</strong> @ViewBag.President
+                <br />
+                <strong><u>Address</u>:</strong> @ViewBag.Address
+                <br />
+                <strong> <u>Language</u>:</strong> @ViewBag.Language
+                <br />
+                <strong><u>Climate</u>:</strong> @ViewBag.Climate
+                <br />
+                <strong><u>Religion</u>:</strong> @ViewBag.Religion
+            </p>
+
+        <div class="row">
+            <h2>FAQ</h2>
+            <br />
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                               How is the food like in @ViewBag.Mission?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            Good, just make sure you don't eat expired foods and you should be fine.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                Are people very religious in @ViewBag.Mission?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Most of the people belive in God, but they don't follow the commandends, they
+                            are willing to learn about new religions.
+                            <br />
+                            <div class="form-group">
+                                <div class="col-md-10">
+                                    <input type="submit" class="btn btn-default" value="Reply" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                What advice to you have about @ViewBag.Mission ?
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Get ready to sometimes take showers from the bucket, and eat what people give you unless
+                            you are allergic. Members sacrifice a lot to feed missionaries.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+<br />
+        <div class="row">
+            <form>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="comment">Send your questions</label>
+                        <textarea class="form-control" rows="5" id="comment"></textarea>
+                    </div>
+                </div>
+            </form>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input type="submit" class="btn btn-default" value="Send" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+</div>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHWEJG6chZqN3wBv30iXHVXMRcIJ94ixc&callback=initMap">
+</script>
+
+    
+
