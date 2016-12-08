@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Project1.Models;
+using System.Web.Security;
 
 namespace Project1.Controllers
 {
@@ -391,6 +392,9 @@ namespace Project1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
+            FormsAuthentication.SignOut();
+            Session.Abandon(); // it will clear the session at the end of request
+
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
         }

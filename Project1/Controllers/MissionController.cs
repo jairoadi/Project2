@@ -14,6 +14,7 @@ namespace Project1.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult Missions(string mission)
         {
             if (mission == "Angola")

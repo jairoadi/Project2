@@ -52,8 +52,38 @@ namespace Project1.Controllers
             Session["userID"] = newUser.userId;
             FormsAuthentication.SetAuthCookie(newUser.userEmail, rememberMe);
 
+            return RedirectToAction("Index");
+        }
+
+
+        public ActionResult Login ()
+        {
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login (Users login, bool rememberMe = false)
+        {
+            //This variable is being used to compare the user imput with the any user in the db with the same credentials
+            var confirmUser = db.User.Where(dbUser => login.userEmail == dbUser.userEmail && login.userPassword == dbUser.userPassword).FirstOrDefault();
+            
+            //if the user is confirmed them the user's session initiates
+            if (confirmUser != null)
+            {
+                FormsAuthentication.SetAuthCookie(confirmUser.userEmail, rememberMe);
+                Session["userEmail"] = confirmUser.userEmail;
+                Session["userId"] = confirmUser.userId;
+            }
+            else
+            {
+
+                ModelState.AddModelError("", "Username or Password is incorrect");
+            }
+            return RedirectToAction("Index");
+        }
+
+
     }
 
       
