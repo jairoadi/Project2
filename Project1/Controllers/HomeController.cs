@@ -73,7 +73,7 @@ namespace Project1.Controllers
             {
                 FormsAuthentication.SetAuthCookie(confirmUser.userEmail, rememberMe);
                 Session["userEmail"] = confirmUser.userEmail;
-                Session["userId"] = confirmUser.userId;
+                
             }
             else
             {

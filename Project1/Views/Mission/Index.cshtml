@@ -17,11 +17,11 @@
                             Choose a mission <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a href="@Url.Action("Missions", "Mission", new { mission = "Angola"})">Angola Luanda<br /> Mission</a></li>
-                            <li><a href="@Url.Action("Missions", "Mission", new { mission = "Colorado"})">Colorado Colorado Springs<br /> Mission</a></li>
-                            <li><a href="@Url.Action("Missions", "Mission", new { mission = "Portugal"})">Portugal Lisbon<br /> Mission</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="@Url.Action("Missions", "Mission", new { mission = "Other"})">Ask about your mission</a></li>
+                            @foreach (var item in @ViewBag.ListMissions)
+                            {
+                                <li><a href="/Mission/Missions/@item.missionID">@item.mission_name<br /> Mission</a></li>
+                            }
+                            
                         </ul>
                     </div>
                     

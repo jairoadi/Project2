@@ -1,9 +1,11 @@
 ﻿@using Project1.Models
+@model IEnumerable<Project1.Models.Missions>
+
 @{
     ViewBag.Title = "Missions";
 }
 <link href="~/Content/Style.css" rel="stylesheet" />
-<h2>@ViewBag.Mission mission FAQ's</h2>
+<h2>@ViewBag.Mission FAQ's</h2>
 
 <div class="container">
     <div class="row">
@@ -32,7 +34,7 @@
 
     <div class="row">
         <br />
-            <p>
+           <!-- <p>
                 <strong><u>President</u>:</strong> @ViewBag.President
                 <br />
                 <strong><u>Address</u>:</strong> @ViewBag.Address
@@ -42,9 +44,9 @@
                 <strong><u>Climate</u>:</strong> @ViewBag.Climate
                 <br />
                 <strong><u>Religion</u>:</strong> @ViewBag.Religion
-            </p>
+            </p>-->
 
-        <div class="row">
+       <!-- <div class="row">
             <h2>FAQ</h2>
             <br />
             <div class="panel-group" id="accordion">
@@ -99,7 +101,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
 
         </div>
 

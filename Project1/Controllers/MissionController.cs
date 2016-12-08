@@ -1,4 +1,9 @@
-﻿using System;
+﻿using Project1.DAL;
+using Project1.Models;
+using System.Data;
+using System.Data.Entity;
+using System.Net;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,52 +13,38 @@ namespace Project1.Controllers
 {
     public class MissionController : Controller
     {
+        private MissionContext db = new MissionContext();
+
         // GET: Mission
         public ActionResult Index()
         {
+            var listof = db.Mission.ToList();// I'm using the listof var to hold all the missions
+            ViewBag.ListMissions = listof;//storing the mission list to a viewbag since it can store "everything"
             return View();
         }
 
+        
+
         [Authorize]
-        public ActionResult Missions(string mission)
+        public ActionResult Missions(int? id)
         {
-            if (mission == "Angola")
+            if (id == null)
             {
-                ViewBag.Mission = "Angola Luanda Mission";
-                ViewBag.Map = "";
-                ViewBag.President = "Denelson Silva";
-                ViewBag.Address = "Condominio Concha, de Talatona #77";
-                ViewBag.Language = "Portuguese";
-                ViewBag.Climate = "Average Temperatures in Luanda, Angola. The mean annual temperature in Luanda, Angola is fairly hot at 25.1 degrees Celsius (77.2 degrees Fahrenheit). Mean monthly temperatures vary by 6.5 °C (11.7°F) which is a very low range.";          
-                ViewBag.Religion = "Roman Catholics";
-                ViewBag.Flag = "/Content/Images/Angolaflag.jpg";
-            }
-            else if (mission == "Colorado")
-            {
-                ViewBag.Mission = "Colorado Colorado Springs Mission";
-                ViewBag.Map = "";
-                ViewBag.President = "J. Patrick Anderson";
-                ViewBag.Address = "4090 Center Park Drive";
-                ViewBag.Language = "English";
-                ViewBag.Climate = "Dry winters with an occasional wind-blown snow. Some very cold temperatures alternating with some surprisingly warm days. Windy springs with highly changeable weather, an occasional blizzard, large temperature changes and an occasional gentle soaking rain or wet snow to help nurture the grasslands.";
-                ViewBag.Religion =  "Roman Catholics";
-                ViewBag.Flag = "/Content/Images/USflag.jpg";
-            }
-            else if (mission == "Portugal")
-            {
-                ViewBag.Mission = "Portugal Lisbon Mission";
-                ViewBag.Map = "";
-                ViewBag.President = "Victor Emanuel Engelhardt Tavares";
-                ViewBag.Address = "Rua Jorge Barradas 14C";
-                ViewBag.Language = "European Portuguese";
-                ViewBag.Climate = "Portugal is mainly characterized by a warm temperate, mediterranean climate with a distinct wet season in winter. During winter, Portugal experiences a similar temperature pattern to the Spanish coastal towns, i.e. average daytime maxima of about 16°C (61°F).";
-                ViewBag.Religion = "Roman Catholics";
-                ViewBag.Flag = "/Content/Images/Portugalflag.jpg";
+                return HttpNotFound();
             }
             else
             {
-                ViewBag.Mission = "Unlisted Mission";
+                Missions currentmission = db.Mission.Find(id);//the parameter received will be the id used to search in the mission table
+
+                if {
+
+                }
+
             }
+            
+            
+
+            
 
             return View();
         }

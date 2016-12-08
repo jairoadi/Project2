@@ -14,12 +14,12 @@ namespace Project1
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
            
-
+            /*
              routes.MapRoute(
                 name: "Missions",
                 url: "Mission/Missions/{mission}",
                 defaults: new { controller = "Mission", action = "Missions", id = UrlParameter.Optional }
-            );
+            );*/
 
              routes.MapRoute(
                 name: "Default",
