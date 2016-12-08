@@ -1,4 +1,4 @@
-﻿@using Project1.Models.Missions
+﻿@model Project1.Models.Missions
 
 @{
     ViewBag.Title = "Missions";
@@ -16,7 +16,7 @@
                 <li>
                     <a href="@Url.Action("Index", "Mission")">Missions</a>
                 </li>
-                <li class="active">@Model.mission_name</li>
+                <li class="active">@Model.mission_name Mission</li>
             </ol>
 
         </div>
@@ -24,32 +24,78 @@
 
     <div class="row text-center">
         <div class=" col-md-offset-2 col-md-4 formap">
-            <img class="map" src="@Model.Map" />
+            <img class="map" src="@Model.mission_map" />
         </div>
         <div class="col-md-4">
-            <img class="flag" src="@Model.Flag" />
+            <img class="flag" src="@Model.mission_flag" />
         </div>
     </div>
 
     <div class="row">
         <br />
-           <!-- <p>
-                <strong><u>President</u>:</strong> @ViewBag.President
+            <p>
+                <strong><u>President</u>:</strong> @Model.mission_president
                 <br />
-                <strong><u>Address</u>:</strong> @ViewBag.Address
+                <strong><u>Address</u>:</strong> @Model.mission_address
                 <br />
-                <strong> <u>Language</u>:</strong> @ViewBag.Language
+                <strong> <u>Language</u>:</strong> @Model.mission_language
                 <br />
-                <strong><u>Climate</u>:</strong> @ViewBag.Climate
+                <strong><u>Climate</u>:</strong> @Model.mission_climate
                 <br />
-                <strong><u>Religion</u>:</strong> @ViewBag.Religion
-            </p>-->
+                <strong><u>Religion</u>:</strong> @Model.mission_religion
+            </p>
 
-       <!-- <div class="row">
+        <div class="row">
             <h2>FAQ</h2>
             <br />
             <div class="panel-group" id="accordion">
-                <div class="panel panel-default">
+                @foreach (var item in ViewBag.currentMissionQuestions)
+                {
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                    @item.question
+
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="#collapse3" class="panel-collapse collapse in">
+                            <div class="panel-body">
+
+                                <!--Beggining comment-->
+                                <div class="comments">
+                                    <!--the comment will be displayed here-->
+                                    <div class="comment-wrap">
+                                        <div class="photo">
+                                            <div class="avatar" style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg')"></div>
+                                        </div>
+                                        <div class="comment-block">
+                                            <p class="comment-text">
+                                                @item.answer
+                                            </p>
+                                            <div class="bottom-comment">
+                                                <div class="comment-date">Aug 24, 2014  2:35 PM</div>
+                                                <ul class="comment-actions">
+                                                    <li class="reply" id="reply"><a href="@Url.Action("Edit", "MissionQuestions", new { id = item.missionQuestionsID, userID = Session["userID"] })">Reply</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+
+
+
+
+                                </div>
+                                <!--Ending comment-->
+
+                            </div>
+                        </div>
+                    </div>
+                }
+
+               <!-- <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
@@ -63,6 +109,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
@@ -99,8 +146,8 @@
                             you are allergic. Members sacrifice a lot to feed missionaries.
                         </div>
                     </div>
-                </div>
-            </div>-->
+                </div>-->
+            </div>
 
         </div>
 

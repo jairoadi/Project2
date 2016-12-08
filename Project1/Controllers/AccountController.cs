@@ -392,10 +392,10 @@ namespace Project1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
-            FormsAuthentication.SignOut();
+            //FormsAuthentication.SignOut();
 
 
-            Session.Abandon(); // it will clear the session at the end of request
+            //Session.Abandon(); // it will clear the session at the end of request
 
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");

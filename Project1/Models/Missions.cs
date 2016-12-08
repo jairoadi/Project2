@@ -24,6 +24,10 @@ namespace Project1.Models
         [HiddenInput(DisplayValue = false)]
         public string mission_address { get; set; }
 
+        [DisplayName("Mission President")]
+        [HiddenInput(DisplayValue = false)]
+        public string mission_president { get; set; }
+
         [DisplayName("Mission Name")]
         [HiddenInput(DisplayValue = false)]
         public string mission_language { get; set; }

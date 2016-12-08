@@ -38,7 +38,7 @@ namespace Project1.Controllers
                 {
                     var currentMissionQuestions = db.MissionQuestion.Where(question => question.missionId == id);//the var currentMissionQuestions will store all the questions that belong to the missionID
                     
-                    ViewBag.currentMissionQuestions = currentMissionQuestions.ToList();//this viewbag will store the list of questions of missionID  
+                    ViewBag.currentQuestions = currentMissionQuestions.ToList();//this viewbag will store the list of questions of missionID  
                 }
 
             return View(currentMission);
