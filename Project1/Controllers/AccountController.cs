@@ -393,6 +393,8 @@ namespace Project1.Controllers
         public ActionResult LogOff()
         {
             FormsAuthentication.SignOut();
+
+
             Session.Abandon(); // it will clear the session at the end of request
 
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);

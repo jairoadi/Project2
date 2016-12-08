@@ -255,7 +255,7 @@
     <Content Include="Views\Mission\Index.cshtml" />
     <Content Include="Views\Mission\Missions.cshtml" />
     <Content Include="Views\Contact\Sent.cshtml" />
-    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Home\Register2.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\MissionQuestions\Create.cshtml" />
     <Content Include="Views\MissionQuestions\Delete.cshtml" />

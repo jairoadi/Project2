@@ -32,14 +32,14 @@ namespace Project1.Controllers
             return View();
         }
 
-        public ActionResult Register()
+        public ActionResult Register2()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(Users newUser, bool rememberMe = false)
+        public ActionResult Register2(Users newUser, bool rememberMe = false)
         {
             //if the model is verified
             if(newUser != null)
@@ -49,11 +49,12 @@ namespace Project1.Controllers
             }
             ModelState.Clear();
             Session["userEmail"] = newUser.userEmail;
-            Session["userID"] = newUser.userId;
+            //Session["userID"] = newUser.userId;
             FormsAuthentication.SetAuthCookie(newUser.userEmail, rememberMe);
 
             return RedirectToAction("Index");
         }
+
 
 
         public ActionResult Login ()
