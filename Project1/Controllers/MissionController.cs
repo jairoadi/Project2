@@ -28,25 +28,20 @@ namespace Project1.Controllers
         [Authorize]
         public ActionResult Missions(int? id)
         {
-            if (id == null)
-            {
-                return HttpNotFound();
-            }
-            else
-            {
-                Missions currentmission = db.Mission.Find(id);//the parameter received will be the id used to search in the mission table
-
-                if {
-
+            Missions currentMission = db.Mission.Find(id);//the parameter received will be the id used to search in the mission table
+           
+                if (currentMission == null)
+                {
+                    return HttpNotFound();
+                }
+                else
+                {
+                    var currentMissionQuestions = db.MissionQuestion.Where(question => question.missionId == id);//the var currentMissionQuestions will store all the questions that belong to the missionID
+                    
+                    ViewBag.currentMissionQuestions = currentMissionQuestions.ToList();//this viewbag will store the list of questions of missionID  
                 }
 
-            }
-            
-            
-
-            
-
-            return View();
+            return View(currentMission);
         }
 
         

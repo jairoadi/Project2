@@ -39,5 +39,9 @@ namespace Project1.Models
         [DisplayName("Flag")]
         [HiddenInput(DisplayValue = false)]
         public string mission_flag { get; set; }
+
+        [DisplayName("Map")]
+        [HiddenInput(DisplayValue = false)]
+        public string mission_map { get; set; }
     }
 }

@@ -1,5 +1,4 @@
-﻿@using Project1.Models
-@model IEnumerable<Project1.Models.Missions>
+﻿@using Project1.Models.Missions
 
 @{
     ViewBag.Title = "Missions";
@@ -17,7 +16,7 @@
                 <li>
                     <a href="@Url.Action("Index", "Mission")">Missions</a>
                 </li>
-                <li class="active">@ViewBag.Mission</li>
+                <li class="active">@Model.mission_name</li>
             </ol>
 
         </div>
@@ -25,10 +24,10 @@
 
     <div class="row text-center">
         <div class=" col-md-offset-2 col-md-4 formap">
-            <img class="map" src="@ViewBag.Map" />
+            <img class="map" src="@Model.Map" />
         </div>
         <div class="col-md-4">
-            <img class="flag" src="@ViewBag.Flag" />
+            <img class="flag" src="@Model.Flag" />
         </div>
     </div>
 
