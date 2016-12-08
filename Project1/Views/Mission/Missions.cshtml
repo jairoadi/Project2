@@ -49,7 +49,7 @@
             <h2>FAQ</h2>
             <br />
             <div class="panel-group" id="accordion">
-                @foreach (var item in ViewBag.currentMissionQuestions)
+                @foreach (var item in ViewBag.currentQuestions)
                 {
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -77,7 +77,7 @@
                                             <div class="bottom-comment">
                                                 <div class="comment-date">Aug 24, 2014  2:35 PM</div>
                                                 <ul class="comment-actions">
-                                                    <li class="reply" id="reply"><a href="@Url.Action("Edit", "MissionQuestions", new { id = item.missionQuestionsID, userID = Session["userID"] })">Reply</a></li>
+                                                    <li class="reply" id="reply"><a href="@Url.Action("Edit", "MissionQuestions", new { })">Reply</a></li>
                                                 </ul>
                                             </div>
                                         </div>
