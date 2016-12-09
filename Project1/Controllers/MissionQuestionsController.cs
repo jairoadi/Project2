@@ -60,9 +60,14 @@ namespace Project1.Controllers
         }
 
         // GET: MissionQuestions/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id, MissionQuestions missionQuestion)
         {
-            if (id == null)
+            var question = db.MissionQuestion.Find(id);
+            question.answer = missionQuestion.answer;
+            db.MissionQuestion.Add(missionQuestion);
+            db.SaveChanges();
+            
+            /*if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -70,8 +75,8 @@ namespace Project1.Controllers
             if (missionQuestions == null)
             {
                 return HttpNotFound();
-            }
-            return View(missionQuestions);
+            }*/
+            return View();
         }
 
         // POST: MissionQuestions/Edit/5
@@ -81,11 +86,14 @@ namespace Project1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "missionquestionID,missionId,userId,question,answer")] MissionQuestions missionQuestions)
         {
-            if (ModelState.IsValid)
+            if (missionQuestions != null)
             {
+               // var question = db.MissionQuestion.Where(dbQuest => missionQuestions.question == dbQuest.question).FirstOrDefault();
+                
+
                 db.Entry(missionQuestions).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Missions","Mission");
             }
             return View(missionQuestions);
         }

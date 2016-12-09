@@ -52,7 +52,7 @@ namespace Project1.Controllers
             //Session["userID"] = newUser.userId;
             FormsAuthentication.SetAuthCookie(newUser.userEmail, rememberMe);
 
-            return RedirectToAction("Missions","Mission");
+            return RedirectToAction("Index");
         }
 
 

@@ -47,7 +47,7 @@ namespace Project1.Controllers
        
 
         // GET: MissionQuestions/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id, MissionQuestions missionQuestion)
         {
             if (id == null)
             {
@@ -58,7 +58,7 @@ namespace Project1.Controllers
             {
                 return HttpNotFound();
             }
-            return View(missionQuestions);
+            return View();
         }
 
         // POST: MissionQuestions/Edit/5
@@ -68,7 +68,7 @@ namespace Project1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "missionquestionID,missionId,userId,question,answer")] MissionQuestions missionQuestions)
         {
-            if (ModelState.IsValid)
+            if (missionQuestions != null)
             {
                 db.Entry(missionQuestions).State = EntityState.Modified;
                 db.SaveChanges();
