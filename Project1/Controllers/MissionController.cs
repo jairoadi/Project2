@@ -44,7 +44,7 @@ namespace Project1.Controllers
             return View(currentMission);
         }
 
-        public ActionResult Edit()
+        public ActionResult editAnswer(FormCollection form)
         {
 
             return View();
@@ -53,7 +53,9 @@ namespace Project1.Controllers
         [HttpPost]
         public ActionResult CreateQuestion([Bind(Include = "questionID,question,answer,missionID,userID")] MissionQuestions newQuestion)
         {
-            if (newQuestion != null)
+            
+
+            if (ModelState.IsValid)
             {
                 var userEmail = User.Identity.Name;//this line of code will look at current user and find it's name
                 var userObj = db.User.Where(m => m.userEmail == userEmail).FirstOrDefault();//After the user is found then will store it's object into the the userObj
