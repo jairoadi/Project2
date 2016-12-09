@@ -101,5 +101,45 @@ namespace Project1.Controllers
 
             return View(newQuestion);
         }
+
+        // GET: MissionQuestions/Edit/5
+        public ActionResult Edit(int? id, MissionQuestions missionQuestion)
+        {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            MissionQuestions missionQuestions = db.MissionQuestion.Find(id);
+
+
+            if (missionQuestions == null)
+            {
+                return HttpNotFound();
+            }
+            return View(missionQuestion);
+        }
+
+        // POST: MissionQuestions/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "missionquestionID,missionId,userId,question,answer")] MissionQuestions missionQuestions, int? id)
+        {
+            if (missionQuestions != null)
+            {
+
+                var update = db.MissionQuestion.Find(id);
+                update.answer = missionQuestions.answer;
+
+                missionQuestions = update;
+
+                db.Entry(missionQuestions).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Missions", "Mission", new { id = id });
+            }
+            return View(missionQuestions);
+        }
     }
 }
