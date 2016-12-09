@@ -44,11 +44,39 @@ namespace Project1.Controllers
             return View(currentMission);
         }
 
-        public ActionResult editAnswer(FormCollection form)
-        {
+       
 
-            return View();
+        // GET: MissionQuestions/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            MissionQuestions missionQuestions = db.MissionQuestion.Find(id);
+            if (missionQuestions == null)
+            {
+                return HttpNotFound();
+            }
+            return View(missionQuestions);
         }
+
+        // POST: MissionQuestions/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "missionquestionID,missionId,userId,question,answer")] MissionQuestions missionQuestions)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(missionQuestions).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(missionQuestions);
+        }
+
 
         [HttpPost]
         public ActionResult CreateQuestion([Bind(Include = "questionID,question,answer,missionID,userID")] MissionQuestions newQuestion, FormCollection form)
