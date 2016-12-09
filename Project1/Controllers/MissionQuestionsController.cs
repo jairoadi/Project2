@@ -94,7 +94,7 @@ namespace Project1.Controllers
 
                 db.Entry(missionQuestions).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Missions","Mission");
+                return RedirectToAction("Mission", "Missions", new { missionId = id });
             }
             return View(missionQuestions);
         }
