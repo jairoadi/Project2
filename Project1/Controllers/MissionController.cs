@@ -44,6 +44,29 @@ namespace Project1.Controllers
             return View(currentMission);
         }
 
-        
+        public ActionResult Edit()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateQuestion([Bind(Include = "questionID,question,answer,missionID,userID")] MissionQuestions newQuestion)
+        {
+            if (newQuestion != null)
+            {
+                var userEmail = User.Identity.Name;//this line of code will look at current user and find it's name
+                var userObj = db.User.Where(m => m.userEmail == userEmail).FirstOrDefault();//After the user is found then will store it's object into the the userObj
+
+                newQuestion.userId = userObj.userId;//assigning a useriD to the newly created question
+                db.MissionQuestion.Add(newQuestion);//addint the newQuestion object to the MissionQuestion table
+                db.SaveChanges();// Saving new changes
+
+                return RedirectToAction("Missions", "Mission", newQuestion.missionId);
+
+            }
+
+            return View(newQuestion);
+        }
     }
 }

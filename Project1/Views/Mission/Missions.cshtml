@@ -103,7 +103,27 @@
         </div>
 
 <br />
+        <hr />  
         <div class="row">
+           <h4>Add your question!</h4>
+            @using (Html.BeginForm("CreateQuestion", "Mission", FormMethod.Post, new { @class = "form-newQuestion" }))
+            {
+                <div class="form-horizontal">     
+                    
+                    <div class="form-group">
+
+                        @Html.TextBox("CreateQuestion", "", new { @class = "form-control", type = "question", id = "inputQuestion", placeholder = "New question" })
+                        @Html.Hidden("missionID", Model.missionID)
+                        
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+
+            }
 
     </div>
 
