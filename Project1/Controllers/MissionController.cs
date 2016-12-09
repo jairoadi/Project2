@@ -46,7 +46,7 @@ namespace Project1.Controllers
 
        
 
-        // GET: MissionQuestions/Edit/5
+  /*      // GET: MissionQuestions/Edit/5
         public ActionResult Edit(int? id, MissionQuestions missionQuestion)
         {
             if (id == null)
@@ -76,7 +76,7 @@ namespace Project1.Controllers
             }
             return View(missionQuestions);
         }
-
+        */
 
         [HttpPost]
         public ActionResult CreateQuestion([Bind(Include = "questionID,question,answer,missionID,userID")] MissionQuestions newQuestion, FormCollection form)

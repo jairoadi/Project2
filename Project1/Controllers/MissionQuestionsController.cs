@@ -62,21 +62,19 @@ namespace Project1.Controllers
         // GET: MissionQuestions/Edit/5
         public ActionResult Edit(int? id, MissionQuestions missionQuestion)
         {
-            var question = db.MissionQuestion.Find(id);
-            question.answer = missionQuestion.answer;
-            db.MissionQuestion.Add(missionQuestion);
-            db.SaveChanges();
-            
-            /*if (id == null)
+ 
+          if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             MissionQuestions missionQuestions = db.MissionQuestion.Find(id);
+
+            
             if (missionQuestions == null)
             {
                 return HttpNotFound();
-            }*/
-            return View();
+            }
+            return View(missionQuestion);
         }
 
         // POST: MissionQuestions/Edit/5
@@ -84,12 +82,15 @@ namespace Project1.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "missionquestionID,missionId,userId,question,answer")] MissionQuestions missionQuestions)
+        public ActionResult Edit([Bind(Include = "missionquestionID,missionId,userId,question,answer")] MissionQuestions missionQuestions, int? id)
         {
             if (missionQuestions != null)
             {
-               // var question = db.MissionQuestion.Where(dbQuest => missionQuestions.question == dbQuest.question).FirstOrDefault();
-                
+
+                var update = db.MissionQuestion.Find(id);
+                update.answer = missionQuestions.answer;
+
+                missionQuestions = update;
 
                 db.Entry(missionQuestions).State = EntityState.Modified;
                 db.SaveChanges();
