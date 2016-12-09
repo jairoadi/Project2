@@ -264,7 +264,7 @@
     <Content Include="Views\MissionQuestions\Edit.cshtml" />
     <Content Include="Views\MissionQuestions\Index.cshtml" />
     <Content Include="Views\MissionQuestions\Edit - Copy.cshtml" />
-    <Content Include="Views\Home\Edit.cshtml" />
+    <Content Include="Views\Mission\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
