@@ -106,13 +106,12 @@
         <hr />  
         <div class="row">
            <h4>Add your question!</h4>
-            @using (Html.BeginForm("CreateQuestion", "Mission", FormMethod.Post, new { @class = "form-newQuestion" }))
+            @using (Html.BeginForm("CreateQuestion", "Mission", FormMethod.Post, new { @class = "form" }))
             {
                 <!--<div class="form-horizontal"> -->    
                     
                     <div class="form-group">
-
-                        @Html.TextBox("CreateQuestion", "", new { @class = "form-control", type = "question", id = "inputQuestion", placeholder = "New question" })
+                        @Html.TextBox("CreateQuestion")
                         @Html.Hidden("missionID", Model.missionID)
                         
                     </div>
@@ -130,6 +129,7 @@
 
     
 </div>
+    </div>
 
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHWEJG6chZqN3wBv30iXHVXMRcIJ94ixc&callback=initMap">
