@@ -89,13 +89,13 @@ namespace Project1.Controllers
                 var userEmail = User.Identity.Name;//this line of code will look at current user and find it's name
                 var userObj = db.User.Where(m => m.userEmail == userEmail).FirstOrDefault();//After the user is found then will store it's object into the the userObj
 
-                newQuestion.question = question;
+                newQuestion.question = question;// now the  object question will be the form question
                 newQuestion.answer = " ";
                 newQuestion.userId = userObj.userId;//assigning a useriD to the newly created question
                 db.MissionQuestion.Add(newQuestion);//addint the newQuestion object to the MissionQuestion table
                 db.SaveChanges();// Saving new changes
 
-                return RedirectToAction("Missions", "Mission", newQuestion.missionId);
+                return RedirectToAction("Missions", "Mission", new { newQuestion.missionId });
 
             }
 
