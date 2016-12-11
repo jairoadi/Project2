@@ -163,7 +163,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MissionController.cs" />
-    <Compile Include="Controllers\MissionQuestionsController.cs" />
     <Compile Include="DAL\MissionContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -258,12 +257,6 @@
     <Content Include="Views\Contact\Sent.cshtml" />
     <Content Include="Views\Home\Register2.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\MissionQuestions\Create.cshtml" />
-    <Content Include="Views\MissionQuestions\Delete.cshtml" />
-    <Content Include="Views\MissionQuestions\Details.cshtml" />
-    <Content Include="Views\MissionQuestions\Edit.cshtml" />
-    <Content Include="Views\MissionQuestions\Index.cshtml" />
-    <Content Include="Views\MissionQuestions\Edit - Copy.cshtml" />
     <Content Include="Views\Mission\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>

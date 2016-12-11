@@ -86,11 +86,6 @@ namespace Project1.Controllers
         {
             if (missionQuestions != null)
             {
-
-                var update = db.MissionQuestion.Find(id);
-                update.answer = missionQuestions.answer;
-
-                missionQuestions = update;
                 
                 db.Entry(missionQuestions).State = EntityState.Modified;
                 db.SaveChanges();
