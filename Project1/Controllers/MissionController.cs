@@ -95,7 +95,7 @@ namespace Project1.Controllers
                 db.MissionQuestion.Add(newQuestion);//addint the newQuestion object to the MissionQuestion table
                 db.SaveChanges();// Saving new changes
 
-                return RedirectToAction("Missions", "Mission", new { newQuestion.missionId });
+                return RedirectToAction("Missions", "Mission", new { id = newQuestion.missionId });
 
             }
 
@@ -130,14 +130,15 @@ namespace Project1.Controllers
             if (missionQuestions != null)
             {
 
-                var update = db.MissionQuestion.Find(id);
+                var update = db.MissionQuestion.Find(id);//create a variable that is storing the question that it founds in the db
+                
                 update.answer = missionQuestions.answer;
 
                 missionQuestions = update;
 
                 db.Entry(missionQuestions).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Missions", "Mission", new { id = id });
+                return RedirectToAction("Missions", "Mission", new { id = missionQuestions.missionId });
             }
             return View(missionQuestions);
         }
