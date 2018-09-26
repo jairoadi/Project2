@@ -2,6 +2,46 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.6.1": {
+      "IdentityModel/3.9.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.1",
+          "System.Text.Encodings.Web": "4.5.0"
+        },
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "lib/net452/IdentityModel.dll": {}
+        },
+        "runtime": {
+          "lib/net452/IdentityModel.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Identity.Core/2.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Identity.Owin/2.2.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Identity.Core": "2.2.2",
+          "Microsoft.Owin.Security": "3.0.1",
+          "Microsoft.Owin.Security.Cookies": "3.0.1",
+          "Microsoft.Owin.Security.OAuth": "3.0.1"
+        },
+        "compile": {
+          "lib/net45/Microsoft.AspNet.Identity.Owin.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.Identity.Owin.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication/2.1.2": {
         "type": "package",
         "dependencies": {
@@ -421,6 +461,98 @@
           "lib/netstandard2.0/Microsoft.Net.Http.Headers.dll": {}
         }
       },
+      "Microsoft.Owin/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net451/Microsoft.Owin.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.dll": {}
+        }
+      },
+      "Microsoft.Owin.Host.SystemWeb/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "4.0.0",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net451/Microsoft.Owin.Host.SystemWeb.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.Host.SystemWeb.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "4.0.0",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net451/Microsoft.Owin.Security.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.Security.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.Cookies/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "4.0.0",
+          "Microsoft.Owin.Security": "4.0.0",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net451/Microsoft.Owin.Security.Cookies.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.Security.Cookies.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.OAuth/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "3.0.1",
+          "Microsoft.Owin.Security": "3.0.1",
+          "Newtonsoft.Json": "6.0.4",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Security.OAuth.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Security.OAuth.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.OpenIdConnect/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Logging": "5.2.0",
+          "Microsoft.IdentityModel.Protocols": "5.2.0",
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.2.0",
+          "Microsoft.IdentityModel.Tokens": "5.2.0",
+          "Microsoft.Owin": "4.0.0",
+          "Microsoft.Owin.Security": "4.0.0",
+          "Owin": "1.0.0",
+          "System.IdentityModel.Tokens.Jwt": "5.2.0"
+        },
+        "frameworkAssemblies": [
+          "System.IdentityModel",
+          "System.Net.Http",
+          "System.Net.Http.WebRequest",
+          "System.Runtime.Serialization"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Owin.Security.OpenIdConnect.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.Security.OpenIdConnect.dll": {}
+        }
+      },
       "Microsoft.Win32.Registry/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -454,6 +586,15 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Owin/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Owin.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Owin.dll": {}
         }
       },
       "System.Buffers/4.5.0": {
@@ -612,6 +753,46 @@
       }
     },
     ".NETFramework,Version=v4.6.1/win": {
+      "IdentityModel/3.9.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.1",
+          "System.Text.Encodings.Web": "4.5.0"
+        },
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "lib/net452/IdentityModel.dll": {}
+        },
+        "runtime": {
+          "lib/net452/IdentityModel.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Identity.Core/2.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Identity.Owin/2.2.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Identity.Core": "2.2.2",
+          "Microsoft.Owin.Security": "3.0.1",
+          "Microsoft.Owin.Security.Cookies": "3.0.1",
+          "Microsoft.Owin.Security.OAuth": "3.0.1"
+        },
+        "compile": {
+          "lib/net45/Microsoft.AspNet.Identity.Owin.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.Identity.Owin.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication/2.1.2": {
         "type": "package",
         "dependencies": {
@@ -1031,6 +1212,98 @@
           "lib/netstandard2.0/Microsoft.Net.Http.Headers.dll": {}
         }
       },
+      "Microsoft.Owin/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net451/Microsoft.Owin.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.dll": {}
+        }
+      },
+      "Microsoft.Owin.Host.SystemWeb/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "4.0.0",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net451/Microsoft.Owin.Host.SystemWeb.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.Host.SystemWeb.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "4.0.0",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net451/Microsoft.Owin.Security.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.Security.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.Cookies/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "4.0.0",
+          "Microsoft.Owin.Security": "4.0.0",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net451/Microsoft.Owin.Security.Cookies.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.Security.Cookies.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.OAuth/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "3.0.1",
+          "Microsoft.Owin.Security": "3.0.1",
+          "Newtonsoft.Json": "6.0.4",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Security.OAuth.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Security.OAuth.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.OpenIdConnect/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Logging": "5.2.0",
+          "Microsoft.IdentityModel.Protocols": "5.2.0",
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.2.0",
+          "Microsoft.IdentityModel.Tokens": "5.2.0",
+          "Microsoft.Owin": "4.0.0",
+          "Microsoft.Owin.Security": "4.0.0",
+          "Owin": "1.0.0",
+          "System.IdentityModel.Tokens.Jwt": "5.2.0"
+        },
+        "frameworkAssemblies": [
+          "System.IdentityModel",
+          "System.Net.Http",
+          "System.Net.Http.WebRequest",
+          "System.Runtime.Serialization"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Owin.Security.OpenIdConnect.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.Security.OpenIdConnect.dll": {}
+        }
+      },
       "Microsoft.Win32.Registry/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -1054,6 +1327,15 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Owin/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Owin.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Owin.dll": {}
         }
       },
       "System.Buffers/4.5.0": {
@@ -1200,6 +1482,46 @@
       }
     },
     ".NETFramework,Version=v4.6.1/win-x64": {
+      "IdentityModel/3.9.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.1",
+          "System.Text.Encodings.Web": "4.5.0"
+        },
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "lib/net452/IdentityModel.dll": {}
+        },
+        "runtime": {
+          "lib/net452/IdentityModel.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Identity.Core/2.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Identity.Owin/2.2.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Identity.Core": "2.2.2",
+          "Microsoft.Owin.Security": "3.0.1",
+          "Microsoft.Owin.Security.Cookies": "3.0.1",
+          "Microsoft.Owin.Security.OAuth": "3.0.1"
+        },
+        "compile": {
+          "lib/net45/Microsoft.AspNet.Identity.Owin.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.Identity.Owin.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication/2.1.2": {
         "type": "package",
         "dependencies": {
@@ -1619,6 +1941,98 @@
           "lib/netstandard2.0/Microsoft.Net.Http.Headers.dll": {}
         }
       },
+      "Microsoft.Owin/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net451/Microsoft.Owin.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.dll": {}
+        }
+      },
+      "Microsoft.Owin.Host.SystemWeb/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "4.0.0",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net451/Microsoft.Owin.Host.SystemWeb.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.Host.SystemWeb.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "4.0.0",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net451/Microsoft.Owin.Security.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.Security.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.Cookies/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "4.0.0",
+          "Microsoft.Owin.Security": "4.0.0",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net451/Microsoft.Owin.Security.Cookies.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.Security.Cookies.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.OAuth/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "3.0.1",
+          "Microsoft.Owin.Security": "3.0.1",
+          "Newtonsoft.Json": "6.0.4",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Security.OAuth.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Security.OAuth.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.OpenIdConnect/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Logging": "5.2.0",
+          "Microsoft.IdentityModel.Protocols": "5.2.0",
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.2.0",
+          "Microsoft.IdentityModel.Tokens": "5.2.0",
+          "Microsoft.Owin": "4.0.0",
+          "Microsoft.Owin.Security": "4.0.0",
+          "Owin": "1.0.0",
+          "System.IdentityModel.Tokens.Jwt": "5.2.0"
+        },
+        "frameworkAssemblies": [
+          "System.IdentityModel",
+          "System.Net.Http",
+          "System.Net.Http.WebRequest",
+          "System.Runtime.Serialization"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Owin.Security.OpenIdConnect.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.Security.OpenIdConnect.dll": {}
+        }
+      },
       "Microsoft.Win32.Registry/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -1642,6 +2056,15 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Owin/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Owin.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Owin.dll": {}
         }
       },
       "System.Buffers/4.5.0": {
@@ -1788,6 +2211,46 @@
       }
     },
     ".NETFramework,Version=v4.6.1/win-x86": {
+      "IdentityModel/3.9.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.1",
+          "System.Text.Encodings.Web": "4.5.0"
+        },
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "lib/net452/IdentityModel.dll": {}
+        },
+        "runtime": {
+          "lib/net452/IdentityModel.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Identity.Core/2.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Identity.Owin/2.2.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Identity.Core": "2.2.2",
+          "Microsoft.Owin.Security": "3.0.1",
+          "Microsoft.Owin.Security.Cookies": "3.0.1",
+          "Microsoft.Owin.Security.OAuth": "3.0.1"
+        },
+        "compile": {
+          "lib/net45/Microsoft.AspNet.Identity.Owin.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.Identity.Owin.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication/2.1.2": {
         "type": "package",
         "dependencies": {
@@ -2207,6 +2670,98 @@
           "lib/netstandard2.0/Microsoft.Net.Http.Headers.dll": {}
         }
       },
+      "Microsoft.Owin/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net451/Microsoft.Owin.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.dll": {}
+        }
+      },
+      "Microsoft.Owin.Host.SystemWeb/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "4.0.0",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net451/Microsoft.Owin.Host.SystemWeb.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.Host.SystemWeb.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "4.0.0",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net451/Microsoft.Owin.Security.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.Security.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.Cookies/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "4.0.0",
+          "Microsoft.Owin.Security": "4.0.0",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net451/Microsoft.Owin.Security.Cookies.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.Security.Cookies.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.OAuth/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Owin": "3.0.1",
+          "Microsoft.Owin.Security": "3.0.1",
+          "Newtonsoft.Json": "6.0.4",
+          "Owin": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Owin.Security.OAuth.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Owin.Security.OAuth.dll": {}
+        }
+      },
+      "Microsoft.Owin.Security.OpenIdConnect/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Logging": "5.2.0",
+          "Microsoft.IdentityModel.Protocols": "5.2.0",
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.2.0",
+          "Microsoft.IdentityModel.Tokens": "5.2.0",
+          "Microsoft.Owin": "4.0.0",
+          "Microsoft.Owin.Security": "4.0.0",
+          "Owin": "1.0.0",
+          "System.IdentityModel.Tokens.Jwt": "5.2.0"
+        },
+        "frameworkAssemblies": [
+          "System.IdentityModel",
+          "System.Net.Http",
+          "System.Net.Http.WebRequest",
+          "System.Runtime.Serialization"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.Owin.Security.OpenIdConnect.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.Owin.Security.OpenIdConnect.dll": {}
+        }
+      },
       "Microsoft.Win32.Registry/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -2230,6 +2785,15 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Owin/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Owin.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Owin.dll": {}
         }
       },
       "System.Buffers/4.5.0": {
@@ -2377,6 +2941,49 @@
     }
   },
   "libraries": {
+    "IdentityModel/3.9.0": {
+      "sha512": "rvKF9dc5JfYG5WXYEE5jrp2Kh75E0DqZzz7X5HK3nyG+rFvoZDqb4MWrpA25OmbpcdQ8daAoxT8E43Y+5rWwuA==",
+      "type": "package",
+      "path": "identitymodel/3.9.0",
+      "files": [
+        ".signature.p7s",
+        "identitymodel.3.9.0.nupkg.sha512",
+        "identitymodel.nuspec",
+        "lib/net452/IdentityModel.dll",
+        "lib/net452/IdentityModel.pdb",
+        "lib/net452/IdentityModel.xml",
+        "lib/netstandard1.4/IdentityModel.dll",
+        "lib/netstandard1.4/IdentityModel.pdb",
+        "lib/netstandard1.4/IdentityModel.xml",
+        "lib/netstandard2.0/IdentityModel.dll",
+        "lib/netstandard2.0/IdentityModel.pdb",
+        "lib/netstandard2.0/IdentityModel.xml"
+      ]
+    },
+    "Microsoft.AspNet.Identity.Core/2.2.2": {
+      "sha512": "bWth+6XxppUzJzLiVh/0r85SWKFR4dCHse4RgJfM30BR6of5euR5Y6U+URdouFYWyaiTaU2ySTPhvvN07cn/oQ==",
+      "type": "package",
+      "path": "microsoft.aspnet.identity.core/2.2.2",
+      "files": [
+        ".signature.p7s",
+        "lib/net45/Microsoft.AspNet.Identity.Core.dll",
+        "lib/net45/Microsoft.AspNet.Identity.Core.xml",
+        "microsoft.aspnet.identity.core.2.2.2.nupkg.sha512",
+        "microsoft.aspnet.identity.core.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.Identity.Owin/2.2.2": {
+      "sha512": "WnnEaF0CA/wlyJeKT6cABfkJgAGUcCI2Htw+1/uswd5zCAc4jP43DyuB6MV/pqwrydxf5OV2KyXjeOuME656bg==",
+      "type": "package",
+      "path": "microsoft.aspnet.identity.owin/2.2.2",
+      "files": [
+        ".signature.p7s",
+        "lib/net45/Microsoft.AspNet.Identity.Owin.dll",
+        "lib/net45/Microsoft.AspNet.Identity.Owin.xml",
+        "microsoft.aspnet.identity.owin.2.2.2.nupkg.sha512",
+        "microsoft.aspnet.identity.owin.nuspec"
+      ]
+    },
     "Microsoft.AspNetCore.Authentication/2.1.2": {
       "sha512": "MXbDTincCKqkrrMF5P8nhjvmXA1yL1mHj8yPJ32wfBkfkLZfV0EhIp/MGKupiVyqsAhjAk0NL9cPslcyvBsQkg==",
       "type": "package",
@@ -2761,6 +3368,72 @@
         "microsoft.net.http.headers.nuspec"
       ]
     },
+    "Microsoft.Owin/4.0.0": {
+      "sha512": "3TNVMkgF+yhesPYwq67ZOcLGtfKEupNNXcqVO4FRNjkQ1v0gBNb3k8CSuJonrCC8EAUp+OeUYrDTQePiyaVzpw==",
+      "type": "package",
+      "path": "microsoft.owin/4.0.0",
+      "files": [
+        "lib/net451/Microsoft.Owin.XML",
+        "lib/net451/Microsoft.Owin.dll",
+        "microsoft.owin.4.0.0.nupkg.sha512",
+        "microsoft.owin.nuspec"
+      ]
+    },
+    "Microsoft.Owin.Host.SystemWeb/4.0.0": {
+      "sha512": "7zRXPcjn1OwHrhJ71KjfU07B//xxBhK3PfYZxVKDVdv1DhDPDAMAshmW1h7sFMcT7gLvSp78uDcKSucpuccCxw==",
+      "type": "package",
+      "path": "microsoft.owin.host.systemweb/4.0.0",
+      "files": [
+        "lib/net451/Microsoft.Owin.Host.SystemWeb.dll",
+        "lib/net451/Microsoft.Owin.Host.SystemWeb.xml",
+        "microsoft.owin.host.systemweb.4.0.0.nupkg.sha512",
+        "microsoft.owin.host.systemweb.nuspec"
+      ]
+    },
+    "Microsoft.Owin.Security/4.0.0": {
+      "sha512": "utXSauY1N+toBsOkrSTN/YL3XknbwVTWIQHo4V7IKTcTiay2r9to0yJK4HluqC5KDuUwkjWdVOru/6j/2JjDnw==",
+      "type": "package",
+      "path": "microsoft.owin.security/4.0.0",
+      "files": [
+        "lib/net451/Microsoft.Owin.Security.XML",
+        "lib/net451/Microsoft.Owin.Security.dll",
+        "microsoft.owin.security.4.0.0.nupkg.sha512",
+        "microsoft.owin.security.nuspec"
+      ]
+    },
+    "Microsoft.Owin.Security.Cookies/4.0.0": {
+      "sha512": "HsSJra7A5S36GHrf5W9gflkULNyTTS3qc+kJYE22DJQ1Ap1M0k0vMwZUzea7J3SEcl7+KeET7dX0qzZn43rt4w==",
+      "type": "package",
+      "path": "microsoft.owin.security.cookies/4.0.0",
+      "files": [
+        "lib/net451/Microsoft.Owin.Security.Cookies.dll",
+        "lib/net451/Microsoft.Owin.Security.Cookies.xml",
+        "microsoft.owin.security.cookies.4.0.0.nupkg.sha512",
+        "microsoft.owin.security.cookies.nuspec"
+      ]
+    },
+    "Microsoft.Owin.Security.OAuth/3.0.1": {
+      "sha512": "wttlhNSijhsrF7iwxYzxhTr8AYxXI6qoiw3b6dhVhqXOYCDp8OQ5yhHFtWlst+65l7VHduXassspZ974rtLMaw==",
+      "type": "package",
+      "path": "microsoft.owin.security.oauth/3.0.1",
+      "files": [
+        "lib/net45/Microsoft.Owin.Security.OAuth.XML",
+        "lib/net45/Microsoft.Owin.Security.OAuth.dll",
+        "microsoft.owin.security.oauth.3.0.1.nupkg.sha512",
+        "microsoft.owin.security.oauth.nuspec"
+      ]
+    },
+    "Microsoft.Owin.Security.OpenIdConnect/4.0.0": {
+      "sha512": "SUV59pLotmJisdWh4ya1icGs7+qPbH9xI1BL8Nn7d5qyEkH5nW3EeG+ZouS378upoFaS9heIlynSImPmv8WTSA==",
+      "type": "package",
+      "path": "microsoft.owin.security.openidconnect/4.0.0",
+      "files": [
+        "lib/net451/Microsoft.Owin.Security.OpenIdConnect.XML",
+        "lib/net451/Microsoft.Owin.Security.OpenIdConnect.dll",
+        "microsoft.owin.security.openidconnect.4.0.0.nupkg.sha512",
+        "microsoft.owin.security.openidconnect.nuspec"
+      ]
+    },
     "Microsoft.Win32.Registry/4.5.0": {
       "sha512": "vduxuHEqRgRrTE8wYG8Wxj/+6wwzddOmZzjKZx6rFMc/91aUBxI5etAFYxesoNaIja5NpgSTcnk6cN8BeYXf9A==",
       "type": "package",
@@ -2826,6 +3499,16 @@
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "newtonsoft.json.11.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
+      ]
+    },
+    "Owin/1.0.0": {
+      "sha512": "OseTFniKmyp76mEzOBwIKGBRS5eMoYNkMKaMXOpxx9jv88+b6mh1rSaw43vjBOItNhaLFG3d0a20PfHyibH5sw==",
+      "type": "package",
+      "path": "owin/1.0.0",
+      "files": [
+        "lib/net40/Owin.dll",
+        "owin.1.0.0.nupkg.sha512",
+        "owin.nuspec"
       ]
     },
     "System.Buffers/4.5.0": {
@@ -3104,9 +3787,15 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.6.1": [
+      "IdentityModel >= 3.9.0",
+      "Microsoft.AspNet.Identity.Owin >= 2.2.2",
       "Microsoft.AspNetCore.Authentication.Cookies >= 2.1.2",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 2.1.2",
-      "Microsoft.AspNetCore.Authentication.OpenIdConnect >= 2.1.2"
+      "Microsoft.AspNetCore.Authentication.OpenIdConnect >= 2.1.2",
+      "Microsoft.Owin.Host.SystemWeb >= 4.0.0",
+      "Microsoft.Owin.Security.Cookies >= 4.0.0",
+      "Microsoft.Owin.Security.OpenIdConnect >= 4.0.0",
+      "Newtonsoft.Json >= 11.0.2"
     ]
   },
   "packageFolders": {
@@ -3142,6 +3831,14 @@
     "frameworks": {
       "net461": {
         "dependencies": {
+          "IdentityModel": {
+            "target": "Package",
+            "version": "[3.9.0, )"
+          },
+          "Microsoft.AspNet.Identity.Owin": {
+            "target": "Package",
+            "version": "[2.2.2, )"
+          },
           "Microsoft.AspNetCore.Authentication.Cookies": {
             "target": "Package",
             "version": "[2.1.2, )"
@@ -3153,6 +3850,22 @@
           "Microsoft.AspNetCore.Authentication.OpenIdConnect": {
             "target": "Package",
             "version": "[2.1.2, )"
+          },
+          "Microsoft.Owin.Host.SystemWeb": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
+          "Microsoft.Owin.Security.Cookies": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
+          "Microsoft.Owin.Security.OpenIdConnect": {
+            "target": "Package",
+            "version": "[4.0.0, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[11.0.2, )"
           }
         }
       }
